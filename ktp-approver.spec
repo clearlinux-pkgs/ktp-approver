@@ -6,7 +6,7 @@
 #
 Name     : ktp-approver
 Version  : 18.12.3
-Release  : 4
+Release  : 5
 URL      : https://download.kde.org/stable/applications/18.12.3/src/ktp-approver-18.12.3.tar.xz
 Source0  : https://download.kde.org/stable/applications/18.12.3/src/ktp-approver-18.12.3.tar.xz
 Source99 : https://download.kde.org/stable/applications/18.12.3/src/ktp-approver-18.12.3.tar.xz.sig
@@ -66,16 +66,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552008015
+export SOURCE_DATE_EPOCH=1555357827
 mkdir -p clr-build
 pushd clr-build
-export LDFLAGS="${LDFLAGS} -fno-lto"
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1552008015
+export SOURCE_DATE_EPOCH=1555357827
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ktp-approver
 cp COPYING %{buildroot}/usr/share/package-licenses/ktp-approver/COPYING
